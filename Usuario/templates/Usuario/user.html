@@ -1,0 +1,150 @@
+{% extends 'Usuario/base.html' %}
+
+{% load static %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+    crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block css %}
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+<link rel="stylesheet" href="{% static 'Usuario/css/user.css'%}">
+<title>Usuario</title>
+{% endblock %}
+
+{% block contenido %}
+<!--Texto-->
+    {% if user.is_autheticated %}
+        {% for p in Usuarios2 %}
+            <div class="container">
+                <div class="row">
+                    <div class="col img">
+                        <img src="{{ p.imagenU.url }}" alt="Placeholder Image">
+                    </div>
+
+                    <div class="box">
+                        <div class="title">
+                            <h2>@ {{ username.Usuarios2 }}</h2>
+                        </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus ex ac semper varius. Duis
+                                lacinia pharetra enim, nec vulputate odio euismod eu. Morbi pulvinar erat vel justo bibendum, eget
+                                aliquam massa malesuada.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="cuenta">
+                        <a class="btn-user" href="#"> + SEGUIR</a>
+                    </div>
+
+                    <div class="cuenta">
+                        <i class='bx bxs-heart btn-user'></i>
+                    </div>
+                </div>
+            </div>
+
+            <section class="shop container">
+                <h2 class="section-title">Portafolio</h2>
+                <!-- Content -->
+                <div class="shop-content">
+                    <!--box 1-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product1.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">ADOPTABLE OC</h2>
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 2-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product2.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">WALLPAPER OC</h2>
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 3-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product3.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">ASSETS</h2>
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 4-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product4.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">CLOACK MODEL</h2>
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 5-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product5.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">WITCH PRINT</h2>
+
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 6-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product6.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">M270 MLRS 3D MODEL</h2>
+
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 7-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product7.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">WOOD ASSETS</h2>
+
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 8-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product8.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">BRICK ASSETS</h2>
+
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 9-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product9.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">MAGIC GRIL PRINT</h2>
+
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 10-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product10.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">SCOOTER 3D MODEL</h2>
+
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 11-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product11.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">HAIR ASSETS</h2>
+
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+                    <!--box 12-->
+                    <div class="product-box">
+                        <img src="{% static 'Usuario/img/product12.png'%}" alt="" class="product-image">
+                        <h2 class="product-title">FLOOR ASSETS</h2>
+
+                        <i class='bx bxs-heart add-heart'></i>
+                    </div>
+
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p id="modal-message"></p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

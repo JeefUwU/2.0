@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/928971cd2d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.cdnfonts.com/css/averta-blackitalic" rel="stylesheet">
+    {% load static %}
+    
+    {% block css %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <img src="{% static 'Usuario/img/Logo.png'%}" alt="Logo" class="Logo">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'screen1' %}">Explorar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Aprender</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trabajo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Noticias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'user' %}">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">logout</a>
+              </li>
+            </ul>
+              <form class="d-flex">
+                <input class="form-control me-sm-2" type="search" placeholder="Buscar en Artiko">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+              </form>
+              <a href="{% static 'shop.hmtl'%}">
+                <i  class='bx bxs-cart' id="cart-icon" href="{% static 'login.html'%}" ></i>
+              </a>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'login_user' %}">Explorar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login_user' %}">Aprender</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login_user' %}">Trabajo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login_user' %}">Noticias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login_user' %}">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login_user' %}">Iniciar sesion</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-sm-2" type="search" placeholder="Buscar en Artiko">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+            <a href="{% static 'shop.hmtl'%}">
+            <i  class='bx bxs-cart' id="cart-icon" href="{% static 'login.html'%}"login_user ></i>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    {% block contenido %}
+
+    {% endblock %}
+
+    <footer class=" text-center"
+    style="background-color: #1F1F23">
+  
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+        <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i>
+        </a>
+
+      <!-- Twitter -->
+        <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i>
+        </a>
+
+      <!-- Google -->
+        <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i>
+        </a>
+
+      <!-- Instagram -->
+        <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i>
+        </a>
+
+      <!-- Linkedin -->
+        <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i>
+        </a>
+      <!-- Github -->
+        <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #333333;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-github"></i>
+        </a>
+    </section>
+    <!-- Section: Social media -->
+    </div>
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #F2387C">
+    © 2023 Copyright:
+    <a class="text-white" href="#" text-decoration="none" >ARTIKO.COM </a>
+    </div>
+    </footer>
+
+    {% block js %}
+
+    {% endblock %}
+</body>
+</html>

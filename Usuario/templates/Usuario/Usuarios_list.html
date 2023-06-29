@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Editar datos de Usuario</h1>
+    <br>
+    <br>
+
+    <button type="button">
+        <a href="#">Agregar</a>
+    </button>
+
+    <div id="idMensajes">
+        {% if mensaje %}
+            {{mensaje}}
+        {% endif %}
+
+    </div>
+
+    <table>
+        {% if Usuario %}
+        <th>Nombre</th>
+        <th>Nombre de Usuario</th>
+        <th>Email</th>
+        <th>Contraseña</th>
+        <th>Modificar</th>
+        <th>Eliminar</th>
+        {% for x in Usuario}
+            <tr>
+                <td> {{ x.Nombre }} </td>
+                <td> {{ x.Usuario }} </td>
+                <td> {{ x.Email }}</td>
+                <td> {{ x.Contraseña }}</td>
+                <td><a href=""></a></td>
+            </tr>
+    </table>
+</body>
+</html>

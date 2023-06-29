@@ -1,0 +1,274 @@
+*{
+    font-family: 'Averta-Semibold', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*Rectangulo interior negro*/
+.form-box {
+    padding-top: 45px;
+    width: 900px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    background: #191919;
+    border-radius: 5% 5% 5% 5%;
+    box-shadow: 10px 15px 20px black;
+    text-align: center;
+}
+/*Crear cuenta*/
+.form-tittle{
+    color: #F2387C;
+    text-transform: uppercase;
+    font-size: 45px;
+    margin-top: 0px;
+}
+
+/*Nombre categorias*/
+.formulario__label{
+    color: white;
+    display: block;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/*inputs*/
+::placeholder{
+    color: #BF759E;
+}
+
+.formulario__grupo-input{
+    position: relative;
+}
+
+.formulario__input{
+    padding: 0 40px 0 10px;
+    color: white;
+    background: none;
+    text-align: center;
+    border: 2px solid #384A59;
+    width: 90%;
+    outline: none;
+    border-radius: 24px;
+    transition: .25s ease all;
+    line-height: 50px;
+}
+
+/*Inputs focus*/
+.formulario__input:focus{
+    width: 100%;
+    border: 2px solid #BF759E;
+    outline: none;
+}
+
+/*Mensajes de error*/
+.formulario__input--error{
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input--error-activo{
+    text-align: center;
+    color: white;
+    display: block;
+}
+
+.formulario__validacion-estado{
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.formulario__validacion-estadoG{
+    position: absolute;
+    right: 25px;
+    bottom: 10px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+/*Terminos y Condiciones*/
+.formulario__checkbox{
+    margin-right: 10px;
+}
+
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar{
+    grid-column: 2;
+}
+
+.formulario__mensaje{
+    height: 45px;
+    line-height: 45px;
+    background: #f66060;
+    padding: 0 15px;
+    border-radius: 50px;
+    text-align: left;
+    font-size: 15px;
+    width: 100%;
+    display: none;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+.formulario__mensaje-activo{
+    display: block;
+}
+
+/*Genero*/
+.genero input[type="radio"] {
+    display: none;
+}
+
+.genero label {
+    color: #BF759E;
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.genero label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    border: 2px solid #05DBF2;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.genero input[type="radio"]:checked + label:before {
+    content: "\2713";
+    color: #fff;
+    background-color: #F2387C;
+    text-align: center;
+    line-height: 20px;
+}
+
+
+/*Fecha de nacimiento*/
+
+.FechaNac input[type="date"]{
+    cursor: pointer;
+    width: 80%;
+    text-align: left;
+}
+.FechaNac{
+    text-align: left;
+    border-radius: 24px;
+    color: white;
+}
+
+/*Boton de registro*/
+.formulario__btn{
+    display: inline-block;
+    padding: 14px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color:#05DBF2;
+    border: 2px solid #05DBF2;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    width: 350px;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.formulario__btn:hover{
+    background: none;
+    cursor: pointer;
+}
+
+/*Texto "¿Tienes cuenta?"*/
+.Sing_Up{
+    color: #F2387C;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+/*Boton de Login*/
+
+.buttonL{
+    display: inline-block;
+    padding: 14px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color:#05DBF2;
+    border: 2px solid #05DBF2;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    width: 165px;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+.buttonL:hover{
+    background: none;
+}
+
+/*Imagen de fondo*/
+body {
+    background-image: url(../img/bg-tiles.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%; 
+}
+
+
+/*ESTILOS VALIDACIONES*/
+
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-correcto .formulario__input{
+    border: 3px solid #1ed12d;
+}
+
+.formulario__grupo-incorrecto .formulario__label{
+    color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input{
+    border: 3px solid #bb2929;
+}
+
+.Grupo_Genero .formulario__input--error{
+    color: #fff;
+}

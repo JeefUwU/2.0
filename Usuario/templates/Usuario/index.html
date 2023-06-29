@@ -1,62 +1,162 @@
-{% extends 'Usuario/base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/928971cd2d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    
+    <title>Index</title>
 
-{% block js%}
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
-    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
-    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
-    crossorigin="anonymous"></script>
-<script src="{% static 'Usuario/js/index.js'%}"></script>
-{% endblock %}
+</head>
 
-{% block css %}
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<script src="https://kit.fontawesome.com/928971cd2d.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-<link rel="stylesheet" href="{% static 'Usuario/css/index.css'%}">
-<title>Index</title>
-{% endblock %}
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <img src="{% static 'img/Logo.png'%}" alt="Logo" class="Logo">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'screen1'%}">Explorar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Aprender</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trabajo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Noticias</a>
+              </li>
 
-{% block contenido %}
-    <!--Texto-->
-
-    <div class="container">
-        <div class="row">
-            <div class="box">
-                <div class="title">
-                    <h2 style="color: #F2387C;">Forma parte de nuestra comunidad</h2>
-                    <br>
-                </div>
-                <p>Únete a nuestra comunidad y descubre un mundo de arte inspirador.
-                    Formar parte de nuestra comunidad te brinda la oportunidad de conectarte con artistas talentosos,
-                    explorar nuevas expresiones creativas y compartir tus propias obras con una audiencia apasionada.
-                </p>
-                <p style="color: #F2387C;">¡Forma parte de nuestra comunidad y déjate inspirar por la belleza del arte
-                    en todas sus formas!</p>
-            </div>
-
-            <div class="col img">
-                <img src="{% static 'Usuario/img/web1.png'%}" alt="Placeholder Image">
-            </div>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-sm-2" type="search" placeholder="Buscar en Artiko">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+            <a href="{% url 'shop'%}">
+            <i  class='bx bxs-cart' id="cart-icon" href="{% url 'login'%}" ></i>
+            </a>
+          </div>
         </div>
-        <div class="cuenta">
-            <a class="btn-user" href="{% url 'SignUp'%}">Crea tu cuenta hoy!</a>
-        </div>
-    </div>
-    </div>
+      </nav>
+    </header>
 
+<!--Texto-->
 
-    <div class="box 2">
-        <h2 style="color: #35DFF2;">TU ARTE TIENE QUE ESTAR AQUI</h2>
-        <br>
-        <p>Explora y comparte tus creaciones artísticas en un entorno colaborativo.
-            Conecta con artistas de todo el mundo, descubre nuevas perspectivas y amplía tu horizonte creativo.
-            Da vida a tus ideas y encuentra un lugar donde tu arte pueda brillar.
-            Únete a nuestra comunidad y déjate inspirar por el talento diverso que nos rodea.
-            Juntos, creamos un espacio para compartir, aprender y crecer en el mundo del arte</p>
+<div class="container">
+  <div class="row">
+    <div class="box">
+      <div class="title">
+        <h2>Forma parte de nuestra comunidad</h2>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus ex ac semper varius. Duis lacinia pharetra enim, nec vulputate odio euismod eu. Morbi pulvinar erat vel justo bibendum, eget aliquam massa malesuada.</p>
     </div>
 
-{% endblock %}
+    <div class="col img">
+      <img src="{% static 'img/web1.png'%}" alt="Placeholder Image">
+    </div>
+  </div>
+  <div class="cuenta">
+    <a class="btn-user" href="{% url 'login'%}">Crea tu cuenta hoy!</a>
+  </div>
+  </div>
+</div>
+
+
+<div class="box 2">
+  <h2>TU ARTE TIENE QUE ESTAR AQUI</h2>
+  <p>Comparte tus trabajos y mucho más</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus ex ac semper varius. Duis lacinia pharetra enim, nec vulputate odio euismod eu. Morbi pulvinar erat vel justo bibendum, eget aliquam massa malesuada.</p>
+</div>
+
+
+
+
+
+<footer class=" text-center"
+style="background-color: #1F1F23">
+  
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #333333;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #F2387C">
+    © 2023 Copyright:
+    <a class="text-white" href="#" text-decoration="none" >ARTIKO.COM </a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>

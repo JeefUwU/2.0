@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link href="https://fonts.cdnfonts.com/css/averta-blackitalic" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/928971cd2d.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/iniciosesion.css'%}">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="website icon" type="png" href="{% static 'img/artiko_color.png'%}">
+</head>
+<body>
+    <div class="container">
+    
+        <form action="{% url 'screen1'%}" class="form-box" id="formulario">
+            <h1 class="form-tittle">Crear cuenta</h1>
+            <div class="row row-cols-2">
+    
+                <!-- Nombre -->
+                <div class="Formulario__grupo  col" id="Grupo__Nombre">
+                    <label for="Nombre" class="formulario__label">Nombre:</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="Nombre" id="Nombre" placeholder="Nombre:">
+                        <i class="formulario__validacion-estado fa-regular fa-circle-xmark fa-2xl"></i>
+                    </div>
+                    <p class="formulario__input--error">Por favor ingrese un nombre válido, solo se permiten letras y espacios en blanco</p>
+                </div>
+
+                <!-- Nombre de Usuario -->
+                <div class="Formulario__grupo col" id="Grupo__UserName">
+                    <label for="UserName" class="formulario__label">Nombre de usuario:</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="UserName" id="UserName" placeholder="Nombre de usuario:">
+                            <i class="formulario__validacion-estado fa-regular fa-circle-xmark fa-2xl"></i>
+                        </div>
+                        <p class="formulario__input--error">Ingrese un nombre de usuario válido. Debe contener al menos 6 caracteres y no debe incluir caracteres especiales</p>
+                </div>
+
+                <!-- Email -->
+                <div class="Formulario__grupo col" id="Grupo__Email">
+                    <label for="Email" class="formulario__label">Email:</label>
+                        <div class="formulario__grupo-input">
+                            <input type="email" class="formulario__input" name="Email" id="Email" placeholder="Email:">
+                            <i class="formulario__validacion-estado fa-regular fa-circle-xmark fa-2xl"></i>
+                        </div>
+                        <p class="formulario__input--error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                </div>
+                
+                <!-- Contraseña -->
+                <div class="Formulario__grupo col" id="Grupo__Password">
+                    <label for="Password" class="formulario__label">Contraseña:</label>
+                        <div class="formulario__grupo-input">
+                            <input type="Password" class="formulario__input" name="Password" id="Password" placeholder="Contraseña:">
+                            <i class="formulario__validacion-estado fa-regular fa-circle-xmark fa-2xl"></i>
+                        </div>
+                        <p class="formulario__input--error">La contraseña tiene que ser de 4 a 12 caracteres</p>
+                </div>
+
+                <!-- Genero (Va el genero antes de la confirmacion de la contraseña 
+                    para que aparezca justamente abajo de la contraseña) -->
+                <div class="Formulario__grupo col" id="Grupo__Genero">
+                    <label for="Genero" class="formulario__label">Genero:</label>
+                    <div class="formulario__grupo-input genero">
+                        <span>
+                        <input type="radio" class="formulario__input" name="Genero"  id="Masculino" value="Masculino" >
+                        <label for="Masculino">Masculino</label>
+                         </span>
+                        <span>
+                         <input type="radio" class="formulario__input" name="Genero" id="Femenino" value="Femenino" >
+                        <label for="Femenino">Femenino</label>
+                        </span>
+                        
+                        <span>
+                        <input type="radio" class="formulario__input" name="Genero" id="Otros" value="Otros" >
+                        <label for="Otros">Otros</label>
+                        <i class="formulario__validacion-estadoG fa-regular fa-circle-xmark fa-2xl"></i>
+                        </span>
+                    </div>
+                    <p class="formulario__input--error">Debe ser seleccionado un Genero.</p>
+                </div>
+                
+
+                <!-- Confirmacion de Contraseña -->
+                <div class="Formulario__grupo col" id="Grupo__Password2">
+                    <label for="Password2" class="formulario__label">Repetir Contraseña:</label>
+                        <div class="formulario__grupo-input">
+                            <input type="Password" class="formulario__input" name="Password2" id="Password2" placeholder="Repita su Contraseña:">
+                            <i class="formulario__validacion-estado fa-regular fa-circle-xmark fa-2xl"></i>
+                        </div>
+                        <p class="formulario__input--error">Ambas contraseñas deben ser iguales.</p>
+                </div>
+
+                <!-- Fecha de nacimiento-->
+                <div class="FechaNac col">
+                    <label>Fecha de nacimiento:</label>
+                    <input type="date" id="FechaNac" min="1960-01-01" max="2016-12-31">
+                    <span id="resultado"></span>
+                  </div>
+
+                <!-- Terminos y condiciones-->
+                <div class="Formulario__grupo col" id="Grupo__Terminos">
+                    <label class="formulario__label">
+                      <input class="formulario__checkbox" type="checkbox" name="Terminos" id="Terminos">
+                      Acepto terminos y condiciones
+                    </label>
+
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fa-regular fa-triangle-exclamation"></i><b>Error:</b> Porfavor rellene el formulario correctamente.</p>
+                    </div>
+                <!-- Boton llamado registro-->
+                    <div class="Formulario__grupo formulario__grupo-btn-enviar">
+                        <button type="submit" class="formulario__btn" >Registrar</button>
+                    </div> 
+                </div>
+
+                <!-- Boton llamado login, que envia a la pestaña de inicio de sesion (Si ya se tiene una cuenta)-->  
+                <div class="Login">
+                    
+                    <h2 class="Sing_Up">¿tienes cuenta?</h2>
+                    <a href="{% url 'login'%}" class="buttonL">Login</a>
+                </div>
+
+                <!-- API-->
+                <br/>
+
+                <form action="?" method="POST">
+                    <div class="g-recaptcha" data-sitekey="6Lfn2_0lAAAAAARllFRazz2o_Z1lyUvO9qXqCiIu"></div>
+                    
+                    
+                </form>
+
+        </form>
+    </div>    
+
+
+
+
+    <script src="../js/iniciosesion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b28f2548c1.js" crossorigin="anonymous"></script>
+</body>
+</html>
